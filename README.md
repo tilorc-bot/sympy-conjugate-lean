@@ -14,13 +14,13 @@ a proof of the whole PR or of SymPy's assumptions engine.
 | [`Q.imaginary(x)` → `-x`](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/refine.py#L675) | [`imaginary_guard`](https://github.com/tilorc-bot/sympy-conjugate-lean/blob/e8f450009d7d5d2d56ec906f2cc0a4e541640053/LeanIdea/Conjugate/Guards.lean) |
 | [`~Q.nonpositive(x)` and `Q.complex(x)` → `log(conjugate(x))`](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/refine.py#L612) | [`conjugate_log_off_cut`](https://github.com/tilorc-bot/sympy-conjugate-lean/blob/e8f450009d7d5d2d56ec906f2cc0a4e541640053/LeanIdea/Conjugate/Log.lean) |
 
-For $z\in\mathbb C$:
+For $z\in ℂ$, writing $\mathrm{conj}$ for complex conjugation:
 
-$$\mathrm{Im}(z)=0\implies\overline z=z,$$
+$$\mathrm{Im}(z)=0\implies\mathrm{conj}(z)=z,$$
 
-$$\mathrm{Re}(z)=0\implies\overline z=-z,$$
+$$\mathrm{Re}(z)=0\implies\mathrm{conj}(z)=-z,$$
 
-$$z\notin(-\infty,0]\implies\overline{\mathrm{Log}(z)}=\mathrm{Log}(\overline z).$$
+$$z\notin(-\infty,0]\implies\mathrm{conj}(\mathrm{Log}(z))=\mathrm{Log}(\mathrm{conj}(z)).$$
 
 SymPy's imaginary guard additionally excludes zero; the identity safely uses
 its weaker consequence. The log guard excludes zero on both sides.
