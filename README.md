@@ -1,3 +1,5 @@
+DISCLAIMER: everything (except this sentence) is entirely AI written. 
+
 # SymPy conjugation rules, checked in Lean
 
 This pilot proves that **three selected rewrite branches** in SymPy PR #29173
