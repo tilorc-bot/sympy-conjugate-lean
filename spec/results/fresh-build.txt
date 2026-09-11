@@ -1,0 +1,7 @@
+✔ [2006/2012] Built LeanIdea.Basic (2.2s)
+✔ [2007/2012] Built LeanIdea.Conjugate.Basic (2.2s)
+✔ [2008/2012] Built LeanIdea.Conjugate.Guards (2.2s)
+✔ [2009/2012] Built LeanIdea.Conjugate.Log (2.2s)
+✔ [2010/2012] Built LeanIdea.Conjugate.Soundness (2.3s)
+✔ [2011/2012] Built LeanIdea (2.1s)
+Build completed successfully (2012 jobs).

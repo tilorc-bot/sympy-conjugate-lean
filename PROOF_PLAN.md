@@ -246,16 +246,18 @@ README accurately describes the verified scope.
 
 ## Completion checklist
 
-- [ ] SymPy target commit and three selected branches recorded.
-- [ ] Real and imaginary conjugation proofs completed.
-- [ ] Off-cut log guard bridge and final theorem completed.
-- [ ] Selected-rule soundness theorem completed.
-- [ ] Trusted assumptions and semantic exclusions documented.
-- [ ] Source manifest, drift check, and boundary checks completed.
-- [ ] Public GitHub repository created and populated with authorization.
-- [ ] README links mathematical claims to source and passing CI.
-- [ ] Fresh-checkout build succeeds; first milestone tagged.
+- [x] SymPy target commit and three selected branches recorded.
+- [x] Real and imaginary conjugation proofs completed.
+- [x] Off-cut log guard bridge and final theorem completed.
+- [x] Selected-rule soundness theorem completed.
+- [x] Trusted assumptions and semantic exclusions documented.
+- [x] Source manifest, drift check, and boundary checks completed.
+- [x] Public GitHub repository created and populated with authorization.
+- [x] README links mathematical claims to source and passing CI.
+- [x] Fresh-checkout build succeeds; first milestone tagged.
 
 After this milestone, consider negative-real logarithms, integer powers,
 real powers, and square roots in that order of incremental scope. Keep inverse
 trigonometric functions and extended-value semantics for a separate plan.
+
+Implemented 2026-09-11. See [the frozen target and validation record](spec/target.md) and [pilot-v0.1](https://github.com/tilorc-bot/sympy-conjugate-lean/tree/pilot-v0.1). Public publication was authorized by the request to implement this plan and provide the new GitHub repository.

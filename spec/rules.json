@@ -14,7 +14,8 @@
     "sympy/assumptions/refine.py": "18c2522f5279727a73afc1c7252af002c8e970906af6d48279fa51e4187ba8fc",
     "sympy/assumptions/tests/test_refine.py": "cdd298fe4a034692bf68bf663c765576e546ede9573027511bbf5b1fed7356a7",
     "sympy/assumptions/predicates/sets.py": "9e98c1e6f15ab06c7c7f89fa7eb563119d5cbcfc1f82dcc12c42f231854f8b32",
-    "LICENSE": "07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286"
+    "LICENSE": "07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286",
+    "sympy/assumptions/predicates/order.py": "6a6aba7adf8b0d88dcd3f976561818dc57b2c9b4d9bbcc93ce6d624054de8a3f"
   },
   "rules": [
     {

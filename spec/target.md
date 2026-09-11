@@ -49,6 +49,7 @@ means `z.re = 0 ∧ z ≠ 0`, and `Q.nonpositive` means
 See the frozen [real definition](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/predicates/sets.py#L123),
 [complex definition](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/predicates/sets.py#L262),
 and [imaginary definition](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/predicates/sets.py#L298).
+The [nonpositive definition](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/predicates/order.py#L173) explicitly requires realness and includes zero.
 Imaginary excludes zero. Its interpretation implies the weaker zero-real-part
 hypothesis sufficient for the elementary theorem; the converse fails at zero.
 
@@ -110,3 +111,20 @@ both the supplied checkout's HEAD and its actual file contents, as well as the
 bundled snapshot. Any mismatch requires reviewing the branches and mapping.
 The copied source retains the [SymPy BSD license](source/LICENSE); original
 project code and prose are MIT licensed.
+
+## Reproduction evidence
+
+The first proof commit `e8f450009d7d5d2d56ec906f2cc0a4e541640053` passed
+[GitHub CI](https://github.com/tilorc-bot/sympy-conjugate-lean/actions/runs/34650602854)
+on 2026-09-11 and was then tagged `pilot-v0.1`. A separate local `git clone
+--no-local` with no existing `.lake` directory fetched the locked dependencies,
+obtained the mathlib cache, and passed `lake build`, the ten-theorem axiom audit,
+and the source drift check. [Build output](results/fresh-build.txt). Its tracked
+files remained unchanged. The local cache download archives were reusable;
+project build artifacts were built afresh. GitHub independently fetched the
+cache on an Ubuntu x86-64 runner; local verification used Linux aarch64.
+
+A negative drift test modified a copied `refine.py` snapshot and confirmed the
+checker rejected it. Lake's generated setup options confirm warnings-as-errors
+for all four certified modules. The documented optional `patch` command was
+also reproduced: its temporary test copy passed, leaving frozen source intact.

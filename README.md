@@ -10,9 +10,9 @@ a proof of the whole PR or of SymPy's assumptions engine.
 
 | Selected Python branch (frozen commit) | Lean theorem |
 | --- | --- |
-| [`Q.real(x)` → `x`](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/refine.py#L672) | [`real_guard`](LeanIdea/Conjugate/Guards.lean) |
-| [`Q.imaginary(x)` → `-x`](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/refine.py#L675) | [`imaginary_guard`](LeanIdea/Conjugate/Guards.lean) |
-| [`~Q.nonpositive(x)` and `Q.complex(x)` → `log(conjugate(x))`](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/refine.py#L612) | [`conjugate_log_off_cut`](LeanIdea/Conjugate/Log.lean) |
+| [`Q.real(x)` → `x`](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/refine.py#L672) | [`real_guard`](https://github.com/tilorc-bot/sympy-conjugate-lean/blob/e8f450009d7d5d2d56ec906f2cc0a4e541640053/LeanIdea/Conjugate/Guards.lean) |
+| [`Q.imaginary(x)` → `-x`](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/refine.py#L675) | [`imaginary_guard`](https://github.com/tilorc-bot/sympy-conjugate-lean/blob/e8f450009d7d5d2d56ec906f2cc0a4e541640053/LeanIdea/Conjugate/Guards.lean) |
+| [`~Q.nonpositive(x)` and `Q.complex(x)` → `log(conjugate(x))`](https://github.com/sympy/sympy/blob/3bc91a30609223ca4e7da1a6feaf62bc179a6f7e/sympy/assumptions/refine.py#L612) | [`conjugate_log_off_cut`](https://github.com/tilorc-bot/sympy-conjugate-lean/blob/e8f450009d7d5d2d56ec906f2cc0a4e541640053/LeanIdea/Conjugate/Log.lean) |
 
 For $z\in\mathbb C$:
 
@@ -24,7 +24,7 @@ $$z\notin(-\infty,0]\implies\overline{\operatorname{Log}(z)}=\operatorname{Log}(
 
 SymPy's imaginary guard additionally excludes zero; the identity safely uses
 its weaker consequence. The log guard excludes zero on both sides.
-[`selected_rule_sound`](LeanIdea/Conjugate/Soundness.lean) packages all three
+[`selected_rule_sound`](https://github.com/tilorc-bot/sympy-conjugate-lean/blob/e8f450009d7d5d2d56ec906f2cc0a4e541640053/LeanIdea/Conjugate/Soundness.lean) packages all three
 rules. `sound_of_successful_ask` takes guard correctness as a hypothesis.
 
 [![Proofs](https://github.com/tilorc-bot/sympy-conjugate-lean/actions/workflows/lean.yml/badge.svg)](https://github.com/tilorc-bot/sympy-conjugate-lean/actions/workflows/lean.yml)
@@ -84,3 +84,7 @@ Read the [frozen target and trusted contracts](spec/target.md),
 [machine-readable mapping](spec/rules.json), [attributed source snapshot](spec/source/NOTICE.md),
 and [implementation plan](PROOF_PLAN.md). Original work is [MIT licensed](LICENSE);
 copied SymPy source retains its [BSD license](spec/source/LICENSE).
+
+Permanent proof snapshot: [`e8f4500`](https://github.com/tilorc-bot/sympy-conjugate-lean/tree/e8f450009d7d5d2d56ec906f2cc0a4e541640053). The theorem links above are pinned to this first proof commit.
+
+The first proof commit is tagged [`pilot-v0.1`](https://github.com/tilorc-bot/sympy-conjugate-lean/tree/pilot-v0.1) after its [successful GitHub CI run](https://github.com/tilorc-bot/sympy-conjugate-lean/actions/runs/34650602854). An independent fresh local checkout also [built successfully](spec/results/fresh-build.txt).
