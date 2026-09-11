@@ -16,11 +16,11 @@ a proof of the whole PR or of SymPy's assumptions engine.
 
 For $z\in\mathbb C$:
 
-$$\operatorname{Im}(z)=0\implies\overline z=z,$$
+$$\mathrm{Im}(z)=0\implies\overline z=z,$$
 
-$$\operatorname{Re}(z)=0\implies\overline z=-z,$$
+$$\mathrm{Re}(z)=0\implies\overline z=-z,$$
 
-$$z\notin(-\infty,0]\implies\overline{\operatorname{Log}(z)}=\operatorname{Log}(\overline z).$$
+$$z\notin(-\infty,0]\implies\overline{\mathrm{Log}(z)}=\mathrm{Log}(\overline z).$$
 
 SymPy's imaginary guard additionally excludes zero; the identity safely uses
 its weaker consequence. The log guard excludes zero on both sides.
