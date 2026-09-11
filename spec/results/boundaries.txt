@@ -1,0 +1,93 @@
+Source drift check passed (not a correspondence proof).
+[
+  {
+    "value": "2",
+    "real": true,
+    "imaginary": false,
+    "complex": true,
+    "log_guard": true,
+    "log_branch_fired": true,
+    "handler_output": "log(2)",
+    "ordinary_refine": "log(2)"
+  },
+  {
+    "value": "-2",
+    "real": true,
+    "imaginary": false,
+    "complex": true,
+    "log_guard": false,
+    "log_branch_fired": false,
+    "handler_output": "log(2) - I*pi",
+    "ordinary_refine": "log(2) - I*pi"
+  },
+  {
+    "value": "0",
+    "real": true,
+    "imaginary": false,
+    "complex": true,
+    "log_guard": false,
+    "log_branch_fired": false,
+    "handler_output": "conjugate(log(0))",
+    "ordinary_refine": "conjugate(zoo)"
+  },
+  {
+    "value": "I",
+    "real": false,
+    "imaginary": true,
+    "complex": true,
+    "log_guard": true,
+    "log_branch_fired": true,
+    "handler_output": "-I*pi/2",
+    "ordinary_refine": "-I*pi/2"
+  },
+  {
+    "value": "-2*I",
+    "real": false,
+    "imaginary": true,
+    "complex": true,
+    "log_guard": true,
+    "log_branch_fired": true,
+    "handler_output": "log(2) + I*pi/2",
+    "ordinary_refine": "log(2) + I*pi/2"
+  },
+  {
+    "value": "1 + I",
+    "real": false,
+    "imaginary": false,
+    "complex": true,
+    "log_guard": true,
+    "log_branch_fired": true,
+    "handler_output": "log(sqrt(2)) - I*pi/4",
+    "ordinary_refine": "log(sqrt(2)) - I*pi/4"
+  },
+  {
+    "value": "oo",
+    "real": false,
+    "imaginary": false,
+    "complex": false,
+    "log_guard": false,
+    "log_branch_fired": false,
+    "handler_output": "conjugate(log(oo))",
+    "ordinary_refine": "oo"
+  },
+  {
+    "value": "zoo",
+    "real": false,
+    "imaginary": false,
+    "complex": false,
+    "log_guard": false,
+    "log_branch_fired": false,
+    "handler_output": "conjugate(log(zoo))",
+    "ordinary_refine": "conjugate(zoo)"
+  },
+  {
+    "value": "nan",
+    "real": null,
+    "imaginary": null,
+    "complex": null,
+    "log_guard": false,
+    "log_branch_fired": false,
+    "handler_output": "conjugate(log(nan))",
+    "ordinary_refine": "nan"
+  }
+]

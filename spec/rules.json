@@ -1,0 +1,57 @@
+{
+  "commit": "3bc91a30609223ca4e7da1a6feaf62bc179a6f7e",
+  "repository": "https://github.com/sympy/sympy.git",
+  "version": "1.15.0.dev",
+  "handler": {
+    "path": "sympy/assumptions/refine.py",
+    "name": "refine_conjugate",
+    "start": 569,
+    "end": 677,
+    "sha256": "237fc08892348da9c9a52860497737be6a5247c7ab8627cfd0ba18eb67ce0aac",
+    "extraction": "Parse UTF-8 Python with ast; take bytes splitlines(keepends=True)[FunctionDef.lineno-1:FunctionDef.end_lineno], including final newline."
+  },
+  "files": {
+    "sympy/assumptions/refine.py": "18c2522f5279727a73afc1c7252af002c8e970906af6d48279fa51e4187ba8fc",
+    "sympy/assumptions/tests/test_refine.py": "cdd298fe4a034692bf68bf663c765576e546ede9573027511bbf5b1fed7356a7",
+    "sympy/assumptions/predicates/sets.py": "9e98c1e6f15ab06c7c7f89fa7eb563119d5cbcfc1f82dcc12c42f231854f8b32",
+    "LICENSE": "07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286"
+  },
+  "rules": [
+    {
+      "id": "conjugate.real",
+      "pattern": "conjugate(x)",
+      "guard": "Q.real(x)",
+      "replacement": "x",
+      "theorem": "LeanIdea.Conjugate.real_guard",
+      "commit": "3bc91a30609223ca4e7da1a6feaf62bc179a6f7e",
+      "source_lines": [
+        672,
+        673
+      ]
+    },
+    {
+      "id": "conjugate.imaginary",
+      "pattern": "conjugate(x)",
+      "guard": "Q.imaginary(x)",
+      "replacement": "-x",
+      "theorem": "LeanIdea.Conjugate.imaginary_guard",
+      "commit": "3bc91a30609223ca4e7da1a6feaf62bc179a6f7e",
+      "source_lines": [
+        675,
+        676
+      ]
+    },
+    {
+      "id": "conjugate.log.off_cut",
+      "pattern": "conjugate(log(x))",
+      "guard": "~Q.nonpositive(x) and Q.complex(x)",
+      "replacement": "log(conjugate(x))",
+      "theorem": "LeanIdea.Conjugate.conjugate_log_off_cut",
+      "commit": "3bc91a30609223ca4e7da1a6feaf62bc179a6f7e",
+      "source_lines": [
+        612,
+        616
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+name = "leanIdea"
+version = "0.1.0"
+defaultTargets = ["LeanIdea"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.33.1"
+
+[[lean_lib]]
+name = "LeanIdea"
+
+[lean_lib.leanOptions]
+warningAsError = true

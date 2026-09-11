@@ -1,0 +1,3 @@
+# Preserve byte-exact upstream snapshots and captured diagnostic output.
+spec/source/** -whitespace
+spec/results/** -whitespace
